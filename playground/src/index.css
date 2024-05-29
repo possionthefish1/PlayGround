@@ -2,6 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-bold;
+	}
+}
+
+@layer components {
+	.product-grid {
+		@apply grid grid-cols-[repeat(auto-fit,_minmax(15rem,1fr))] gap-1;
+	}
+
+	.card {
+		@apply grid items-stretch *:col-start-1 *:row-start-1 aspect-[1/1.5];
+	}
+
+	.card__img {
+		@apply aspect-square object-cover;
+	}
+
+	.card__content {
+		@apply m-2 mb-8 self-end bg-white p-2 shadow-md;
+	}
+
+	.card__title {
+		@apply ~text-xl/2xl text-amber-600;
+	}
+
+	.card__price {
+		@apply ~text-2xl/3xl;
+	}
+}
+
+/* @layer components {
+	.product-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.card {
+		background-color: theme('colors.white');
+		border-radius: theme('borderRadius.lg');
+		padding: theme('spacing.6');
+		box-shadow: theme('boxShadow.xl');
+	}
+} */
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
