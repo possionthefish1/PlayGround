@@ -1,11 +1,16 @@
 import { type FieldValues, useForm } from 'react-hook-form';
 
+interface FormData {
+  name: string;
+  age: number;
+}
+
 function Form() {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
   const obSubmit = (data: FieldValues) => console.log(data);
   console.log(errors);
 
@@ -23,11 +28,15 @@ function Form() {
             id='username'
             {...register('name', { required: true, minLength: 6 })}
           />
-          {errors?.name?.type === 'required' && (
-            <p>This Username is required.</p>
+          {errors.name?.type === 'required' && (
+            <p className='text-red-600'>
+              This Username is required.
+            </p>
           )}
-          {errors?.name?.type === 'minLength' && (
-            <p>The username must be at least 6 characters.</p>
+          {errors.name?.type === 'minLength' && (
+            <p className='text-red-600'>
+              The username must be at least 6 characters.
+            </p>
           )}
         </div>
         <div className='mb-3 flex'>
@@ -35,14 +44,14 @@ function Form() {
           <input
             className='grow rounded border border-slate-500'
             {...register('age', { required: true, min: 18 })}
-            type='text'
+            type='number'
             id='age'
           />
-          {errors?.age?.type === 'required' && (
-            <p>Age is required.</p>
+          {errors.age?.type === 'required' && (
+            <p className='text-red-600'>Age is required.</p>
           )}
-          {errors?.age?.type === 'min' && (
-            <p>Wait till you get older.</p>
+          {errors.age?.type === 'min' && (
+            <p className='text-red-600'>Wait till you get older.</p>
           )}
         </div>
         <button
