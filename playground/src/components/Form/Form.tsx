@@ -19,7 +19,7 @@ function Form() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
   const obSubmit = (data: FieldValues) => console.log(data);
   console.log(errors);
@@ -55,8 +55,9 @@ function Form() {
           )}
         </div>
         <button
+          // disabled={!isValid}
           type={'submit'}
-          className='self-start rounded bg-blue-600 px-4 py-2 text-white active:bg-fuchsia-500 hover:bg-blue-400'
+          className='self-start rounded bg-blue-600 px-4 py-2 text-white active:bg-blue-500 hover:bg-blue-400 disabled:bg-blue-200'
         >
           Submit
         </button>
