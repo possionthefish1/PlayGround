@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "sort": "npx @biomejs/biome check --apply-unsafe ./src",
+    "sort": "npx @biomejs/biome check --write --unsafe ./src",
     "preview": "vite preview"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.6.0",
+    "flowbite": "^2.3.0",
     "immer": "^10.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -4,11 +4,12 @@ import reset from 'tw-reset';
 /** @type {import('tailwindcss').Config} */
 export default {
   presets: [reset],
-  plugins: [fluid],
+  plugins: [fluid, require('flowbite/plugin')],
   content: {
     files: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     extract,
   },
+  darkMode: 'class',
   theme: {
     /** @type {import('fluid-tailwind').FluidThemeConfig} */
     fluid: ({ theme }) => ({

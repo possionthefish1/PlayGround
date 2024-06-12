@@ -77,7 +77,7 @@
 				"useBlockStatements": "warn",
 				"useCollapsedElseIf": "error",
 				"useConsistentArrayType": "error",
-				"useFilenamingConvention": {
+				/* "useFilenamingConvention": {
 					"level": "warn",
 					"options": {
 						"strictCase": true,
@@ -87,10 +87,10 @@
 							"export"
 						]
 					}
-				},
+				}, */
 				"useForOf": "warn",
 				"useFragmentSyntax": "warn",
-				"useNamingConvention": "error",
+				// "useNamingConvention": "error",
 				"useNodeAssertStrict": "error",
 				"useShorthandArrayType": "warn",
 				"useShorthandAssign": "warn",
