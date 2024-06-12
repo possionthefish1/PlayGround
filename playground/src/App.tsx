@@ -1,5 +1,13 @@
-import './App.css';
+import { Form } from './components/Form';
+
 function App() {
+  return (
+    <>
+      <h1 className='font-bold text-4xl'>App</h1>
+      <Form />
+    </>
+  );
+  /* 
   return (
     <main className='bg-violet-50 text-slate-700'>
       <div className='container my-container'>
@@ -119,7 +127,7 @@ function App() {
         </div>
       </div>
     </main>
-  );
+  ); */
 }
 
 export { App };

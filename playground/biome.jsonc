@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+	"$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
 	"organizeImports": {
 		"enabled": true
 	},
@@ -8,7 +8,7 @@
 			"node_modules",
 			"**/node_modules/**",
 			"dist",
-			"bin",
+			"bin"
 		],
 		"ignoreUnknown": true
 	},
@@ -20,6 +20,9 @@
 		"rules": {
 			"recommended": true, // default true
 			// "all": true,
+			"a11y": {
+				"recommended": true
+			},
 			"complexity": {
 				"all": true,
 				"noVoid": "error",
@@ -29,52 +32,123 @@
 			"correctness": {
 				"all": true,
 				"noNewSymbol": "error",
-				"noUnusedImports": "warn",
-				"noUnusedVariables": "warn",
+				"noUnusedImports": {
+					"level": "warn",
+					"fix": "none"
+				},
+				"noUnusedVariables": {
+					"level": "warn",
+					"fix": "none"
+				},
+				"noFlatMapIdentity": "error",
+				"noNodejsModules": "error",
+				"noConstantMathMinMaxClamp": "error",
+				"useArrayLiterals": "error",
 				"noUndeclaredVariables": "error",
 				"noUnusedPrivateClassMembers": "error",
 				"useHookAtTopLevel": "error"
 			},
 			"performance": {
-				"recommended": true
-			},
-			"a11y": {
-				"recommended": true
+				"recommended": true,
+				// "noBarrelFile": "error",
+				"noReExportAll": "error"
 			},
 			"security": {
 				"recommended": true
 			},
 			"style": {
-				"all": true,
+				"recommended": true,
 				"noDefaultExport": "error", // not in recommend
 				"noImplicitBoolean": "error", // not in recommend
 				"noNamespace": "warn", // not in recommend
 				"noNamespaceImport": "warn",
+				"noNegationElse": "error",
+				"noParameterProperties": "warn",
+				// "noRestrictedGlobals": {
+				// 	"level": "error",
+				// 	"options": {
+				// 		"deniedGlobals": [
+				// 			"$",
+				// 			"MooTools"
+				// 		]
+				// 	}
+				// },
 				"noShoutyConstants": "warn",
 				"useBlockStatements": "warn",
 				"useCollapsedElseIf": "error",
 				"useConsistentArrayType": "error",
-				"useShorthandArrayType": "error",
-				"useFilenamingConvention": "warn",
+				"useFilenamingConvention": {
+					"level": "warn",
+					"options": {
+						"strictCase": true,
+						"requireAscii": true,
+						"filenameCases": [
+							"camelCase",
+							"export"
+						]
+					}
+				},
 				"useForOf": "warn",
+				"useFragmentSyntax": "warn",
+				"useNamingConvention": "error",
+				"useNodeAssertStrict": "error",
+				"useShorthandArrayType": "warn",
 				"useShorthandAssign": "warn",
-				"useSingleCaseStatement": "error",
-				"useNamingConvention": "error" // not in recommend
+				"useSingleCaseStatement": "warn"
 			},
 			"suspicious": {
 				"recommended": true,
 				// "all": true,
-				// "noConsoleLog": "warn",
-				"useAwait": "warn",
-				"noEmptyBlockStatements": "error"
+				// "noConsoleLog": "info",
+				"noEmptyBlockStatements": "error",
+				"noSkippedTests": "error",
+				"useAwait": "error"
 			},
 			"nursery": {
 				// "all": true,
-				// "noConsole": "warn",
+				// "noConsole": "info",
+				"noDoneCallback": "error",
+				"noDuplicateAtImportRules": "error",
+				"noDuplicateElseIf": "error",
+				"noDuplicateFontNames": "error",
+				"noDuplicateJsonKeys": "error",
+				"noDuplicateSelectorsKeyframeBlock": "error",
+				"noEmptyBlock": "info",
+				"noEvolvingTypes": "error",
+				"noImportantInKeyframe": "error",
+				"noInvalidPositionAtImportRule": "error",
+				"noLabelWithoutControl": "error",
+				"noMisplacedAssertion": "error",
 				// "noReactSpecificProps": "error",
-				"noEvolvingAny": "error",
-				"useArrayLiterals": "warn",
-				"useSortedClasses": "warn"
+				"noRestrictedImports": "error",
+				"noUndeclaredDependencies": "error",
+				"noUnknownFunction": "error",
+				"noUnknownMediaFeatureName": "error",
+				"noUnknownProperty": "error",
+				"noUnknownSelectorPseudoElement": "error",
+				"noUnknownUnit": "error",
+				"noUnmatchableAnbSelector": "warn",
+				"noUnusedFunctionParameters": "warn",
+				"noUselessStringConcat": "error",
+				"noUselessUndefinedInitialization": "warn",
+				"noYodaExpression": "warn",
+				"useAdjacentOverloadSignatures": "error",
+				"useConsistentBuiltinInstantiation": "error",
+				"useDateNow": "error",
+				"useDefaultSwitchClause": "error",
+				"useErrorMessage": "warn",
+				"useExplicitLengthCheck": "warn",
+				"useFocusableInteractive": "warn",
+				"useGenericFontNames": "warn",
+				// "useImportExtensions": "warn",
+				"useNumberToFixedDigitsArgument": "error",
+				// "useSemanticElements": "error",
+				"useSortedClasses": "warn",
+				"useThrowNewError": "error",
+				"useThrowOnlyError": "error"
+				// "useTopLevelRegexp": "error",
+				//New above
+				// "useImportExtensions": "warn",
 			}
 		}
 	},
@@ -91,7 +165,7 @@
 		"formatter": {
 			"quoteStyle": "single", // default "double"
 			"jsxQuoteStyle": "single", // default "double"
-			"trailingComma": "all", //default "all", choose "es5" to add comma only where older browser support.
+			"trailingCommas": "all", //default "all", choose "es5" to add comma only where older browser support.
 			"bracketSameLine": false // default false
 		}
 	}

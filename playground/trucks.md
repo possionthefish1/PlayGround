@@ -19,3 +19,6 @@ Thursday 30 5:58 PM - fast and repeat loudly but only 1s to 3s?
 
 Saturday 1 12:14 AM - not so loud 3s like 3-cha
 Saturday 1 08:33 PM - pan-pan-pan 2s 3 times
+Tuesday 4 10:18 PM - 3s each 4-6 times, stationary truck.
+Friday 6 5:28 PM - 2 times, first far away 3-4s as song, 2nd same but louder because front of a house already.
+Friday 6 7:12 PM - around 8s horn long until it goes out of range.
