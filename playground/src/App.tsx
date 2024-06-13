@@ -1,13 +1,17 @@
-import { Form } from './components/Form';
-import { Table } from './components/Table';
+import { FormTwo } from './components/FormTwo';
+import { TableTwo } from './components/TableTwo';
 
-export const categories = ['Utilities', 'Personal/Hobby', 'Career'];
+const categories = [
+  'Utilities',
+  'Personal/Hobby',
+  'Career',
+] as const;
 
 function App() {
   return (
-    <div className='container mx-auto mt-16 flex flex-col items-center justify-center rounded-lg p-8 font-medium text-slate-800 shadow-md'>
-      <Form />
-      <Table />
+    <div className='container mx-auto'>
+      <FormTwo />
+      <TableTwo />
     </div>
   );
 }

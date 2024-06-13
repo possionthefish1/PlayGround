@@ -1,0 +1,1 @@
+export { TableTwo } from './TableTwo';
